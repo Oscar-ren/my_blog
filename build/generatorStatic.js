@@ -47,7 +47,6 @@ Promise.all(
 
   helpers.generateTagPage(Object.entries(helpers.getPostListFromTags(posts)).sort());
   helpers.generateArchivesPage(Object.entries(helpers.getPostListFromDate(posts)));
-  helpers.copy(path.resolve('src/sw.js'), path.resolve('public/sw.js'))
 }).catch((err) => {
   console.log("read file has an error: %s", err);
 })

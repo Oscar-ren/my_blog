@@ -49,6 +49,7 @@ self.addEventListener('fetch', event => {
           if(response && shouldAlwaysCache(event.request.url)) return response;
 
           var fetchPromise = fetch(event.request).then(function(networkResponse) {
+            console.log(networkResponse.clone());
             cache.put(event.request, networkResponse.clone());
             return networkResponse;
           })
