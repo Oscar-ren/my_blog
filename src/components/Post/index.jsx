@@ -1,7 +1,7 @@
 'use strict';
 
 import Component from 'inferno-component';
-import { Link, IndexLink } from 'inferno-router';
+import { Link } from 'inferno-router';
 import postListStyle from '../PostList/postlist.css';
 import styles from './post.css';
 import fecha from 'fecha';

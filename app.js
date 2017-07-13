@@ -21,7 +21,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(compression());
 app.use(cookieParser());
 app.use(express.static(path.resolve('public'), { extensions: ['html'] }));
-app.use(express.static(path.join(__dirname, 'dist')));
+app.use('/statics', express.static(path.join(__dirname, 'dist'), {
+  setHeaders: function(res, path) {
+    res.set("Access-Control-Allow-Origin", "*");
+  }
+}));
 
 
 // app.get('/blog/:name', (req, res, next) => {
