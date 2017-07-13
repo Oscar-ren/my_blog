@@ -9,6 +9,11 @@ const helper = require('./helper');
 
 const app = express();
 
+app.use(function(req, res, next) {
+  res.set("Access-Control-Allow-Origin", "*");
+  next();
+})
+
 // view engine setup
 app.set('views', path.join(__dirname, 'public'));
 app.engine('html', require('ejs').renderFile);
@@ -21,11 +26,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(compression());
 app.use(cookieParser());
 app.use(express.static(path.resolve('public'), { extensions: ['html'] }));
-app.use('/statics', express.static(path.join(__dirname, 'dist'), {
-  setHeaders: function(res, path) {
-    res.set("Access-Control-Allow-Origin", "*");
-  }
-}));
+app.use('/statics', express.static(path.join(__dirname, 'dist')));
 
 
 // app.get('/blog/:name', (req, res, next) => {
