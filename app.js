@@ -9,11 +9,6 @@ const helper = require('./helper');
 
 const app = express();
 
-app.use(function(req, res, next) {
-  res.set("Access-Control-Allow-Origin", "*");
-  next();
-})
-
 // view engine setup
 app.set('views', path.join(__dirname, 'public'));
 app.engine('html', require('ejs').renderFile);
@@ -43,6 +38,7 @@ app.use('/statics', express.static(path.join(__dirname, 'dist')));
 //
 app.get('/json/posts', (req, res, next) => {
   const {page, tag} = req.query;
+  res.set("Access-Control-Allow-Origin", "*");
   res.status(200).send({
     posts: helper.getPosts()
   })
