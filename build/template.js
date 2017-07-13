@@ -4,6 +4,8 @@ const template = ({title, state, staticString}) => (
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta http-equiv="keywords" content="任祥磊,rxl">
+  <meta name="description" content="任祥磊的博客，写写技术和生活，日子不能过的一尘不变">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>${title}</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
