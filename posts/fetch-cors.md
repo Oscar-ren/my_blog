@@ -35,15 +35,14 @@ fetch(new Request(url, {mode: 'cors'})) // 这里的 cors 优先级比 fetch 的
 
 根据 [Fetch 草案](https://fetch.spec.whatwg.org/#concept-filtered-response-opaque), Fetch mode 属性有 5 个值，分别是 `same-origin`, `cors`, `no-cors`, `navigate`, 和 `websocket`，我主要研究了一下 `same-origin`, `cors`, `no-cors`这三个
 
-`same-origin`：同域，设置此属性值请求跨域资源报错
-
-`cors`：允许跨域请求，不过需要服务端设置 `Access-Control-Allow-Origin: * `，如果服务端没有设置会报错
+* `same-origin`：同域，设置此属性值请求跨域资源报错
+* `cors`：允许跨域请求，不过需要服务端设置 `Access-Control-Allow-Origin: * `，如果服务端没有设置会报错
 
 ![5D5742D0-82F7-4DB8-B47A-8B370831D47B](https://ws3.sinaimg.cn/large/006tNc79ly1fhibhfm0v1j30wo044wg3.jpg)
 
-`no-cors`:  不允许跨域，请求跨域资源会返回一个 opaque 的 response 对象，没法根据返回值判断请求是否成功，js 不能操作 response 对象，否则会报错
+* `no-cors`:  不允许跨域，请求跨域资源会返回一个 opaque 的 response 对象，没法根据返回值判断请求是否成功，js 不能操作 response 对象，否则会报错
 
-![30737B97-71E8-4E60-BFC3-F5E1150C26ED](/var/folders/tt/2xrd2dwx78z62pbz_3dpzr500000gn/T/abnerworks.Typora/30737B97-71E8-4E60-BFC3-F5E1150C26ED.png)
+![no-core response](https://ws1.sinaimg.cn/large/006tKfTcly1fhidro8s2rj30wo01cmxl.jpg)
 
 
 ## 使用
