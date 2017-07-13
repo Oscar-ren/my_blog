@@ -17,6 +17,10 @@ export const generatePostsJson = (posts) => {
   fs.writeFileSync('data/posts.json', JSON.stringify(posts, null, 2));
 }
 
+export const copy = (src, dist) => {
+  fs.createReadStream(src).pipe(fs.createWriteStream(dist));
+}
+
 export const generatePostPage = (post) => {
   const state = { ...defaultState, post };
   const { title, name } = post;
