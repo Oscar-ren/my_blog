@@ -24,9 +24,9 @@ app.use(express.static(path.resolve('public'), { extensions: ['html'] }));
 app.use('/statics', express.static(path.join(__dirname, 'dist')));
 
 
-// app.get('/blog/:name', (req, res, next) => {
-//   res.sendFile(`${req.params.name}.html`, {root:  path.resolve('public')});
-// })
+app.get('/blog/:name', (req, res, next) => {
+  res.sendFile(`${req.params.name}.html`, {root:  path.resolve('public')});
+})
 //
 // app.get('/tags', (req, res, next) => {
 //   res.sendFile(`tags.html`, {root:  path.resolve('public')});
