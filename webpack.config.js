@@ -97,7 +97,7 @@ module.exports = {
       context: __dirname,
       manifest: require("./dist/vendor-manifest.json")
     }),
-    new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)()
+    // new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)()
   ],
   resolve: {
     extensions: [".js", ".jsx"],
