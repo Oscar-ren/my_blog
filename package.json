@@ -6,8 +6,8 @@
   },
   "private": true,
   "scripts": {
-    "heroku-postbuild": "npm run build & webpack",
-    "build": "babel-node build/generatorStatic.js",
+    "heroku-postbuild": "npm run build && webpack -p",
+    "build": "babel-node build/generatorStatic.js && webpack --config webpack.dll.config.js",
     "start": "nodemon app.js",
     "dev": "concurrently \"nodemon app.js\" \"export NODE_ENV=dev && webpack-dev-server --hot --inline\""
   },

@@ -42,7 +42,7 @@ const template = ({title, state, staticString}) => (
 </head>
 <body>
   <div id="root">${staticString}</div>
-  <script src="/statics/vendor.js"></script>
+  <script src="/statics/vendor.dll.js"></script>
   <script src="/statics/app.js"></script>
   <script src="https://s19.cnzz.com/z_stat.php?id=1262801421&web_id=1262801421" language="JavaScript"></script>
 </body>

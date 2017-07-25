@@ -1,12 +1,10 @@
 const webpack = require('webpack');
 const path = require("path");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const productionConfig = {
   plugins: process.env.NODE_ENV == 'dev' ? [] :[
-    new UglifyJSPlugin({
+    new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
       }
@@ -17,7 +15,6 @@ const productionConfig = {
 module.exports = {
   entry: {
     app: './src/index.jsx',
-    vendor: ['inferno', 'inferno-component', 'inferno-router', 'history', 'fecha']
   },
   output: {
     path: path.resolve('dist'),
@@ -96,12 +93,11 @@ module.exports = {
     }),
     new ExtractTextPlugin('style.css'),
     new webpack.NoEmitOnErrorsPlugin(),
-    new webpack.optimize.CommonsChunkPlugin({
-      name: "vendor",
-      filename: "vendor.js",
-      minChunks: Infinity,
+    new webpack.DllReferencePlugin({
+      context: __dirname,
+      manifest: require("./dist/vendor-manifest.json")
     }),
-    //new BundleAnalyzerPlugin()
+    new (require('webpack-bundle-analyzer').BundleAnalyzerPlugin)()
   ],
   resolve: {
     extensions: [".js", ".jsx"],
