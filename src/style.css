@@ -1,0 +1,156 @@
+html {
+  box-sizing: border-box;
+  line-height: 1.5;
+}
+
+*,
+::before,
+::after {
+  box-sizing: inherit;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  color: #333;
+  font-size: 14px;
+  background: #ddd;
+  /* https://sanwen8.cn/p/4a8l47u.html */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Helvetica, Arial,
+  "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei UI", "Microsoft YaHei", "Source Han Sans CN", sans-serif;
+}
+
+[hidden] {
+  display: none;
+}
+
+
+h2, h3, h4, h5 {
+  margin: 10px 0;
+  margin-top: 1em;
+}
+
+h2 {
+  font-size: 1.7em;
+}
+
+h3 {
+  font-size: 1.4em;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+code {
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+a {
+  color: #2479CC;
+  text-decoration: none;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+li>p {
+  margin-top: 16px;
+}
+
+dl {
+  padding: 0;
+}
+
+dl dt {
+  padding: 0;
+  margin-top: 16px;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: 600;
+}
+
+dl dd {
+  padding: 0 16px;
+  margin-bottom: 16px;
+}
+
+img {
+  max-width: 100%;
+}
+
+article {
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #fff;
+  padding: 30px 0;
+  position: relative;
+
+  @media screen and (max-width: 1024px) {
+    padding-bottom: 15px;
+  }
+
+  & pre code {
+    font-size: 0.875em;
+  }
+
+  & ul,
+  & ol {
+    padding-left: 2em;
+  }
+
+  & blockquote {
+    padding: 0 1em;
+    color: #6a737d;
+    border-left: 0.25em solid #dfe2e5;
+    margin-bottom: 10px;
+  }
+
+  & :not(pre) > code {
+    padding: 0;
+    padding-top: 0.2em;
+    padding-bottom: 0.2em;
+    margin: 0;
+    font-size: 85%;
+    background-color: rgba(27,31,35,0.05);
+    border-radius: 3px;
+  }
+
+  & :not(pre) > code::before,
+  & :not(pre) > code::after {
+    letter-spacing: -0.2em;
+    content: "\00a0";
+  }
+
+  & p {
+    margin-top: 15px;
+  }
+}
+
+h1 {
+  font-weight: 300;
+  font-size: 2em;
+  line-height: 35px;
+  margin-bottom: 25px;
+
+  & a {
+    color: #333;
+    transition: color .3s;
+
+    &:hover {
+      color: #2479CC;
+    }
+  }
+}

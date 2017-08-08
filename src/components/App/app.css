@@ -1,0 +1,140 @@
+.left_column {
+  position: fixed;
+  color: var(--mainColor);
+  width: 250px;
+  height: 100%;
+  background: #5d87b1;
+  /*background-image: url('https://p0.ssl.qhimg.com/t017e4318a2749a6acc.jpg');*/
+  background-image: url('https://p1.ssl.qhimg.com/t0159296699179b1664.jpg');
+
+  & header {
+    padding: 50px 0 0 40px;
+
+    & .subtitle {
+      color: #fff0f0;
+    }
+  }
+}
+
+.main_column {
+  background: white;
+  margin-left: 250px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  min-height: 100%;
+
+  & .content {
+    padding: 0 calc(70px - (100vw - 100% - 250px)) 0 40px;
+    color: #444;
+    font-size: 16px;
+    line-height: 1.8;
+  //-webkit-font-smoothing: antialiased;
+    word-wrap: break-word;
+  }
+
+  & footer {
+    padding: 20px calc(70px - (100vw - 100% - 250px)) 20px 40px;
+    font-size: 1em;
+    line-height: 2.2;
+    text-align: center;
+  }
+}
+
+.profilepic {
+  & a {
+    background: url('https://p1.ssl.qhimg.com/t01437f373dd073f29e.jpg');
+    display: inline-block;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    background-size: cover;
+    margin: 0 0 10px 5px;
+  }
+}
+
+.main_nav {
+  margin-top: 15px;
+  & li {
+    list-style: none;
+    margin: 10px 0;
+
+    & a {
+      color: var(--mainColor);
+      cursor: pointer;
+      transition: color 0.3s;
+
+      &:hover {
+        color: #e6d8d8;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .left_column {
+    width: 210px;
+
+    & header {
+      padding-left: 20px;
+    }
+  }
+
+  .main_column {
+    margin-left: 210px;
+
+    & .content {
+      padding: 0 calc(20px - (100vw - 100% - 210px)) 0 20px;
+    }
+
+    & footer {
+      padding: 20px calc(20px - (100vw - 100% - 210px)) 20px 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .left_column {
+    position: relative;
+    background-size: cover;
+    width: 100%;
+
+    & header {
+      padding: 20px 0;
+      text-align: center;
+    }
+  }
+
+  .main_column {
+    margin-left: 0;
+
+    & .content {
+      padding: 0 10px;
+    }
+
+    & footer {
+      padding: 20px 10px 20px 10px;
+    }
+  }
+
+  .profilepic {
+    & a {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      width: 66px;
+      height: 66px;
+    }
+  }
+
+  .main_nav {
+
+    & li {
+      display: inline;
+
+      & a {
+        margin: 0 10px;
+      }
+    }
+  }
+}

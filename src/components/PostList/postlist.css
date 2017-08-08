@@ -1,0 +1,48 @@
+.page_nav {
+  line-height: 20px;
+  padding: 20px 0;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #fff;
+
+  & .prev {
+    float: left;
+  }
+
+  & .next {
+    float: right;
+  }
+
+  & .center {
+    margin: 0 auto;
+    width: 100px;
+    text-align: center;
+  }
+}
+
+.meta {
+  float: right;
+  color: #555;
+  text-align: right;
+  font-weight: 300;
+  font-size: .9em;
+  line-height: 1.8;
+
+  & div {
+    margin-bottom: 5px;
+  }
+
+  & .tag {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    background-color: #5bc0de;
+    margin-left: 5px;
+  }
+}
