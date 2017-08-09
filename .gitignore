@@ -2,4 +2,4 @@
 /dist/
 /public/*.html
 .idea/
-/data/
+/data/posts.json
