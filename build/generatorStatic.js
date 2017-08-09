@@ -14,7 +14,7 @@ const POST_DIR_PATH = path.resolve("posts");
 const filenames = fs.readdirSync(POST_DIR_PATH);
 
 const getPost = (filename, postStr) => {
-  const matches = postStr.match(/---([\s\S]+)---\n+(#[^#\n.]*)\n+([\s\S]+)/m);
+  const matches = postStr.match(/---([\s\S]+)---[\r\n]+(#[^#\r\n.]*)[\r\n]+([\s\S]+)/m);
   const meta = JSON.parse(matches[1]);
   meta.title = matches[2].slice(2);
   const name = meta.date + "-" + path.basename(filename, '.md');
