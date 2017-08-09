@@ -14,7 +14,11 @@ const defaultState = {
 const publicPath = filename => path.resolve('public', `${filename}.html`);
 
 export const generatePostsJson = (posts) => {
-  fs.writeFileSync('data/posts.json', JSON.stringify(posts, null, 2));
+  fs.exists('data',function(exists){
+      if(!exists)
+          fs.mkdirSync('data')
+      fs.writeFileSync('data/posts.json', JSON.stringify(posts, null, 2));
+  })
 }
 
 export const copy = (src, dist) => {
