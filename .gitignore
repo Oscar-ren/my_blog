@@ -2,4 +2,5 @@
 /dist/
 /public/*.html
 .idea/
+.DS_Store
 /data/posts.json
