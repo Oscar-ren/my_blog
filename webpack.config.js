@@ -3,7 +3,7 @@ const path = require("path");
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 const productionConfig = {
-  plugins: process.env.NODE_ENV == 'dev' ? [] :[
+  plugins: process.env.NODE_ENV === 'dev' ? [] :[
     new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false
@@ -84,7 +84,7 @@ module.exports = {
     noParse: [/fecha.min/]
   },
 
-  devtool: process.env.NODE_ENV == 'dev' ? 'source-map' : false,
+  devtool: process.env.NODE_ENV === 'dev' ? 'source-map' : false,
 
   plugins: [
     ...productionConfig.plugins,
