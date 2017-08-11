@@ -3,7 +3,7 @@ import { Router } from 'inferno-router';
 import createBrowserHistory from 'history/createBrowserHistory';
 import 'prismjs/themes/prism-okaidia.css';
 import createRoutes from './createRouters';
-require('./style.css');
+import './style.css';
 
 const browserHistory = createBrowserHistory();
 const routes = createRoutes(window.__INITIAL_STATE__);

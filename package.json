@@ -9,7 +9,7 @@
     "heroku-postbuild": "npm run build && webpack -p",
     "build": "babel-node build/generatorStatic.js && webpack --config webpack.dll.config.js",
     "start": "nodemon app.js",
-    "dev": "concurrently \"nodemon app.js\" \"export NODE_ENV=dev && webpack-dev-server --hot --inline\""
+    "dev": "concurrently \"nodemon app.js\" \"cross-env NODE_ENV=dev && webpack-dev-server --hot --inline\""
   },
   "dependencies": {
     "autoprefixer": "^7.1.1",
