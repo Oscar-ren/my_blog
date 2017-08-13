@@ -1,19 +1,19 @@
 import Component from 'inferno-component';
 import { Link } from 'inferno-router';
-import styles from './tags.css'
+import styles from './tags.css';
 
 export default class Tags extends Component {
-  constructor(prop) {
+  constructor (prop) {
     super(prop);
     this.getTagsData = this.getTagsData.bind(this);
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.getTagsData();
-    document.title = "分类 | 任祥磊的博客";
+    document.title = '分类 | 任祥磊的博客';
   }
 
-  getTagsData() {
+  getTagsData () {
     fetch(`/json/tags`)
       .then(res => res.json())
       .then(data => {
@@ -21,10 +21,10 @@ export default class Tags extends Component {
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
 
-  render() {
+  render () {
     const {tags} = this.props;
 
     return (
@@ -44,6 +44,6 @@ export default class Tags extends Component {
         </article>
       </div>
 
-    )
+    );
   }
 }

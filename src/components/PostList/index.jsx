@@ -3,9 +3,8 @@ import { Link } from 'inferno-router';
 import styles from './postlist.css';
 import fecha from 'fecha';
 
-
 export default class PostList extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {
       posts: [],
@@ -15,16 +14,16 @@ export default class PostList extends Component {
     this.getPostsData = this.getPostsData.bind(this);
   }
 
-  processBlogContent(content) {
-    return content.split("<!--more-->")[0] + ' [...]';
+  processBlogContent (content) {
+    return `${content.split('<!--more-->')[0]} [...]`;
   }
 
-  componentDidMount() {
+  componentDidMount () {
     this.getPostsData();
     document.title = '任祥磊的博客';
   }
 
-  getPostsData(page = 1, tag = '') {
+  getPostsData (page = 1, tag = '') {
     fetch(`/json/posts?page=${page}&tag=${encodeURIComponent(tag)}`)
       .then(res => res.json())
       .then(data => {
@@ -32,27 +31,27 @@ export default class PostList extends Component {
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
 
-  render() {
+  render () {
     const {posts} = this.props;
 
     return (
       <div>
         {posts.map(prop => {
-            return (
-              <article>
-                <section className={styles.meta}>
-                  <div className={styles.date}>{fecha.format(new Date(prop.date), "MMM D, YYYY")}</div>
-                </section>
-                <h1 className={styles.title}><Link to={`/blog/${prop.name}`}>{prop.title}</Link></h1>
-                <div>
-                  <div dangerouslySetInnerHTML={{__html: this.processBlogContent(prop.content)}} />
-                  <p><Link to={`/blog/${prop.name}`}>继续阅读 »</Link></p>
-                </div>
-              </article>
-            )
+          return (
+            <article>
+              <section className={styles.meta}>
+                <div className={styles.date}>{fecha.format(new Date(prop.date), 'MMM D, YYYY')}</div>
+              </section>
+              <h1 className={styles.title}><Link to={`/blog/${prop.name}`}>{prop.title}</Link></h1>
+              <div>
+                <div dangerouslySetInnerHTML={{__html: this.processBlogContent(prop.content)}} />
+                <p><Link to={`/blog/${prop.name}`}>继续阅读 »</Link></p>
+              </div>
+            </article>
+          );
         })}
         <nav className={styles.page_nav}>
           <Link className={styles.next} to="/">下一页 »</Link>
@@ -61,11 +60,11 @@ export default class PostList extends Component {
           </div>
         </nav>
       </div>
-    )
+    );
   }
 }
 
 PostList.defaultProps = {
-  //预置props
+  // 预置props
   posts: []
-}
+};

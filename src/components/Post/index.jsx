@@ -8,41 +8,41 @@ import fecha from 'fecha';
 // import 'github-markdown-css/github-markdown.css';
 
 export default class Post extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
   }
 
-  componentWillMount() {
-    if(typeof window !== 'undefined') {
+  componentWillMount () {
+    if (typeof window !== 'undefined') {
       window.scrollTo(0, 0);
     }
     this.getPostData(this.props.params.name);
   }
 
-  componentDidUpdate() {
+  componentDidUpdate () {
     const {title} = this.props.post;
-    if(title) {
+    if (title) {
       document.title = title;
     }
   }
 
-  getPostData(name) {
+  getPostData (name) {
     const { posts } = this.props;
-    for(let i = 0; i < posts.length; i++) {
-      if(posts[i].name === name) {
+    for (let i = 0; i < posts.length; i++) {
+      if (posts[i].name === name) {
         this.props.update({post: posts[i]});
       }
     }
   }
 
-  render() {
+  render () {
     const {origin, post} = this.props;
 
     return (
       <div>
         <article>
           <section className={postListStyle.meta}>
-            <div className={postListStyle.date}>{post.date ? fecha.format(new Date(post.date), "MMM D, YYYY") : ''}</div>
+            <div className={postListStyle.date}>{post.date ? fecha.format(new Date(post.date), 'MMM D, YYYY') : ''}</div>
             <div>
               {post.tags && post.tags.map(tag => (
                 <Link className={postListStyle.tag} to={`/tags#${tag}`}>{tag}</Link>
@@ -57,10 +57,10 @@ export default class Post extends Component {
           </div>
         </article>
       </div>
-    )
+    );
   }
 }
 
 Post.defaultProps = {
 
-}
+};

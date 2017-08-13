@@ -6,20 +6,20 @@ import { Link, IndexLink } from 'inferno-router';
 import styles from './app.css';
 
 export default class App extends Component {
-  constructor(props) {
+  constructor (props) {
     super(props);
     this.state = {};
     this.update = this.update.bind(this);
   }
 
-  update(props) {
+  update (props) {
     this.setState({...this.state, ...props});
   }
 
-  render() {
+  render () {
     const {children, params, ...initialState} = this.props;
 
-    const Main = children? Inferno.cloneVNode(children, {
+    const Main = children ? Inferno.cloneVNode(children, {
       ...initialState,
       ...this.state,
       update: this.update
@@ -39,7 +39,7 @@ export default class App extends Component {
                 <li><Link to="/" title="首页">首页</Link></li>
                 <li><Link to="/tags" title="分类">分类</Link></li>
                 <li><Link to="/archives" title="归档">归档</Link></li>
-                {/*<li><Link to="/about" title="关于">关于</Link></li>*/}
+                {/* <li><Link to="/about" title="关于">关于</Link></li> */}
               </ul>
             </nav>
           </header>
@@ -51,11 +51,11 @@ export default class App extends Component {
           </footer>
         </div>
       </div>
-    )
+    );
   }
 }
 
 App.defaultProps = {
-  //预置props
-  origin: typeof window !== 'undefined' ? window.location.origin : ""
-}
+  // 预置props
+  origin: typeof window !== 'undefined' ? window.location.origin : ''
+};

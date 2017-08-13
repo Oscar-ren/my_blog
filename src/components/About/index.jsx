@@ -1,13 +1,13 @@
 import Component from 'inferno-component';
 
 export default class About extends Component {
-  constructor(prop) {
+  constructor (prop) {
     super(prop);
   }
 
-  render() {
+  render () {
     return (
       <div></div>
-    )
+    );
   }
 }

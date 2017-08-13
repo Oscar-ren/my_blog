@@ -3,17 +3,17 @@ import { Link } from 'inferno-router';
 import styles from './archives.css';
 
 export default class Archives extends Component {
-  constructor(prop) {
+  constructor (prop) {
     super(prop);
     this.getPostsData = this.getPostsData.bind(this);
   }
 
-  componentDidMount() {
-    document.title = "归档 | 任祥磊的博客";
+  componentDidMount () {
+    document.title = '归档 | 任祥磊的博客';
     this.getPostsData();
   }
 
-  getPostsData() {
+  getPostsData () {
     fetch(`/json/archives`)
       .then(res => res.json())
       .then(data => {
@@ -21,11 +21,10 @@ export default class Archives extends Component {
       })
       .catch(err => {
         console.log(err);
-      })
+      });
   }
 
-  render() {
-
+  render () {
     const { archives } = this.props;
 
     return (
@@ -44,6 +43,6 @@ export default class Archives extends Component {
           ))}
         </article>
       </div>
-    )
+    );
   }
 }
