@@ -3,13 +3,14 @@
 import Component from 'inferno-component';
 import { Link } from 'inferno-router';
 import postListStyle from '../PostList/postlist.css';
-import styles from './post.css';
+import './post.css';
 import fecha from 'fecha';
 // import 'github-markdown-css/github-markdown.css';
 
 export default class Post extends Component {
   constructor (props) {
     super(props);
+    this.state = {};
   }
 
   componentWillMount () {

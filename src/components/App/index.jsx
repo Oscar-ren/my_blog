@@ -2,7 +2,7 @@
 
 import Inferno from 'inferno';
 import Component from 'inferno-component';
-import { Link, IndexLink } from 'inferno-router';
+import { Link } from 'inferno-router';
 import styles from './app.css';
 
 export default class App extends Component {

@@ -1,6 +1,5 @@
 import Component from 'inferno-component';
 import { Link } from 'inferno-router';
-import styles from './archives.css';
 
 export default class Archives extends Component {
   constructor (prop) {

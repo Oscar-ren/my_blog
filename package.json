@@ -10,10 +10,10 @@
     "build": "babel-node build/generatorStatic.js && webpack --config webpack.dll.config.js",
     "start": "nodemon app.js",
     "dev": "concurrently \"nodemon app.js\" \"cross-env NODE_ENV=dev && webpack-dev-server --hot --inline\"",
-    "test": "eslint --fix src/**",
-    "pre-commit": ["test"],
-    "precommit.silent": true
+    "test": "eslint src/**/*.{js,jsx}"
   },
+  "pre-commit": ["test"],
+  "precommit.silent": true,
   "dependencies": {
     "autoprefixer": "^7.1.1",
     "babel-cli": "^6.24.1",
@@ -61,6 +61,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-node": "^5.1.1",
     "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-react": "^7.2.0",
     "eslint-plugin-standard": "^3.0.1",
     "pre-commit": "^1.2.2"
   }

@@ -1,10 +1,17 @@
 {
   "extends": "standard",
-
   "rules": {
     "semi": ["error", "always"],
     "object-shorthand": ["error", "always", { "avoidQuotes": true }],
     "prefer-template": "error",
-    "no-useless-constructor": "error"
+    "no-useless-constructor": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
+  },
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "fetch": false
   }
 }

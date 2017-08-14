@@ -1,6 +1,6 @@
 import Component from 'inferno-component';
 import { Link } from 'inferno-router';
-import styles from './tags.css';
+import './tags.css';
 
 export default class Tags extends Component {
   constructor (prop) {
