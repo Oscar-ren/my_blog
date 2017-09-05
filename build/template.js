@@ -18,6 +18,7 @@ const template = ({title, state, staticString}) => (
       document.documentElement.className = 'ie8';
   </script>
   <script src="/lib/es5-shim.min.js"></script>
+  <script src="/lib/es5-sham.min.js"></script>
   <script src="/lib/json3.min.js"></script>
   <script src="/lib/respond.js"></script>
   <![endif]-->
@@ -28,6 +29,7 @@ const template = ({title, state, staticString}) => (
       }
   </script>
   <![endif]-->
+  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Object.assign,Promise,fetch,Map,WeakMap,Set&flags=gated"></script>
   <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('/sw.js').then(function(registration) {
@@ -38,7 +40,6 @@ const template = ({title, state, staticString}) => (
      }
      var __INITIAL_STATE__ = ${JSON.stringify(state)}
   </script>
-  <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Object.assign,Promise,fetch" defer></script>
 </head>
 <body>
   <div id="root">${staticString}</div>

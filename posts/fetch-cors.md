@@ -56,7 +56,7 @@ fetch(new Request(url, {mode: 'cors'})) // 这里的 cors 优先级比 fetch 的
   带着疑问搜到一个 [Service Worker 官方的跨域例子](https://demo.service-worker.org/cors-fetch/)，读了一下测试代码，原来 Service Worker 中的 fetch 请求虽然不能访问跨域资源 response，但是可以[通过 respondWith() 方法抛给前端主线程去处理](https://www.w3.org/TR/2014/WD-service-workers-20140508/#h1-x-origin-resources)，大哭，原来症结在这里，w3c 官方规定。。。。
 
 ```javascript
-// index.html
+temp.html
 $.ajax({url: url, dataType: 'jsonp', jsonpCallback: 'cb'})
   .then(function(data) {
   $('#result').text(JSON.stringify(data, null, 4))

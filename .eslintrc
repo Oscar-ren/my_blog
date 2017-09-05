@@ -1,4 +1,11 @@
 {
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "env": {
+    "browser": true
+  },
   "extends": "standard",
   "rules": {
     "semi": ["error", "always"],

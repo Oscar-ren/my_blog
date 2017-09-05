@@ -1,6 +1,7 @@
-/node_modules/
-/dist/
-/public/*.html
+node_modules/
+dist/
+public/*.html
 .idea/
 .DS_Store
-/data/posts.json
+data/posts.json
+npm-debug.log
