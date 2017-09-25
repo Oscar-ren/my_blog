@@ -12,7 +12,7 @@ export default class Draw extends Component {
 
   componentDidMount () {
     this.getAwardInfo();
-    document.title = '任祥磊的博客';
+    document.title = '抽奖';
   }
 
   getAwardInfo () {
