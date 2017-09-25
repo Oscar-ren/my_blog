@@ -67,11 +67,20 @@ export const generateTagPage = (tags) => {
 
 export const generateDrawPage = (params) => {
   const htmlString = staticRender({
-    title: '抽奖',
+    title: '深圳万科客户关系中心',
     state: {...defaultState, ...params},
-    url: '/wanke/draw'
+    url: '/vanke/draw'
   });
   fs.writeFileSync(publicPath('draw'), htmlString);
+}
+
+export const generateDrawLogPage = (params) => {
+  const htmlString = staticRender({
+    title: '深圳万科客户关系中心',
+    state: {...defaultState, ...params},
+    url: '/vanke/awardLog'
+  });
+  fs.writeFileSync(publicPath('awardLog'), htmlString);
 }
 
 export const generateArchivesPage = (archives) => {

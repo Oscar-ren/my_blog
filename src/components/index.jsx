@@ -5,3 +5,4 @@ export {default as Tags} from './Tags';
 export {default as Archives} from './Archives';
 export {default as About} from './About';
 export {default as Draw} from './Draw';
+export {default as AwardLog} from './AwardLog';

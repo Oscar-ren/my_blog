@@ -14,7 +14,8 @@
 }
 
 .operator {
-  text-align: center;
+  /*text-align: center;*/
+
   & button {
       display: inline-block;
       margin-bottom: 0;
@@ -42,6 +43,7 @@
       font-size: 14px;
       border-radius: 4px;
       height: 32px;
+      margin: 8px 0;
 
       &:active {
          color: #fff;
@@ -57,4 +59,8 @@
            outline: 0;
          }
     }
+}
+
+.activityInfo {
+  font-size: 12px;
 }

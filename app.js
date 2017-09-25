@@ -44,7 +44,7 @@ app.use('/statics', express.static(path.join(__dirname, 'dist')));
 
 
 // wanke draw
-app.get('/wanke/getAwardInfo', (req, res, next) => {
+app.get('/vanke/getAwardInfo', (req, res, next) => {
   if(award.length === 0) {
     res.status(200).send({
       error: 100,
@@ -59,7 +59,7 @@ app.get('/wanke/getAwardInfo', (req, res, next) => {
   });
 });
 
-app.get('/wanke/getAward', (req, res, next) => {
+app.get('/vanke/getAward', (req, res, next) => {
   const {id} = req.query;
   const timestamp = Date.now();
   for(let i = 0; i < award.length; i++) {
@@ -86,7 +86,35 @@ app.get('/wanke/getAward', (req, res, next) => {
   });
 });
 
-app.get('/wanke/:name', (req, res, next) => {
+app.get('/vanke/getAwardLog', (req, res, next) => {
+  res.status(200).send({
+    log: awardLog,
+    award: award
+  });
+});
+
+app.get('/vanke/resetAward', (req, res, next) => {
+  award = [
+    {
+      id: 0,
+      name: '活力水星开瓶器',
+      pic: 'KangJia.jpeg',
+      remain: gift_KangJia_Num
+    },
+    {
+      id: 1,
+      name: '阿波罗五件套刀具',
+      pic: 'BTSM.jpeg',
+      remain: gift_BTSM_Num
+    }];
+
+  awardLog = [];
+  res.status(200).send({
+    award: award
+  });
+});
+
+app.get('/vanke/:name', (req, res, next) => {
   console.log(req.params.name);
   res.sendFile(`${req.params.name}.html`, {root: path.resolve('public')});
 });
