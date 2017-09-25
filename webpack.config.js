@@ -24,15 +24,6 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        loader: 'eslint-loader',
-        enforce: 'pre',
-        include: [path.join(__dirname, 'src')],
-        options: {
-          formatter: require('eslint-friendly-formatter')
-        }
-      },
-      {
         test: /\.jsx?$/,
         use: ['babel-loader']
       },
@@ -96,7 +87,7 @@ module.exports = {
   devtool: process.env.NODE_ENV === 'dev' ? 'source-map' : false,
 
   plugins: [
-    ...productionConfig.plugins,
+    //...productionConfig.plugins,
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
     }),

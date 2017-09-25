@@ -12,10 +12,6 @@
     "dev": "concurrently \"nodemon app.js\" \"cross-env NODE_ENV=dev && webpack-dev-server --hot --inline\"",
     "lint": "eslint src/**/*.{js,jsx}"
   },
-  "pre-commit": [
-    "lint"
-  ],
-  "precommit.silent": true,
   "dependencies": {
     "autoprefixer": "^7.1.1",
     "babel-cli": "^6.24.1",

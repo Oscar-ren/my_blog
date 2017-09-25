@@ -8,7 +8,8 @@ const defaultState = {
   tags: [],
   archives: [],
   pages: 1,
-  page: 1
+  page: 1,
+  commonTop: true
 }
 
 const publicPath = filename => path.resolve('public', `${filename}.html`);
@@ -62,6 +63,15 @@ export const generateTagPage = (tags) => {
     url: '/tags'
   });
   fs.writeFileSync(publicPath('tags'), htmlString);
+}
+
+export const generateDrawPage = (params) => {
+  const htmlString = staticRender({
+    title: '抽奖',
+    state: {...defaultState, ...params},
+    url: '/wanke/draw'
+  });
+  fs.writeFileSync(publicPath('draw'), htmlString);
 }
 
 export const generateArchivesPage = (archives) => {

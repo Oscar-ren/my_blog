@@ -46,6 +46,7 @@ Promise.all(
   posts.forEach(helpers.generatePostPage);
 
   helpers.generateTagPage(Object.entries(helpers.getPostListFromTags(posts)).sort());
+  helpers.generateDrawPage({commonTop: false});
   helpers.generateArchivesPage(Object.entries(helpers.getPostListFromDate(posts)));
 }).catch((err) => {
   console.log("read file has an error: %s", err);

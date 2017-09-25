@@ -31,13 +31,13 @@ const template = ({title, state, staticString}) => (
   <![endif]-->
   <script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Object.assign,Promise,fetch,Map,WeakMap,Set&flags=gated"></script>
   <script>
-    if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js').then(function(registration) {
-          console.log('ServiceWorker registration successful with scope: ',    registration.scope);
-        }).catch(function(err) {
-          console.log('ServiceWorker registration failed: ', err);
-        });
-     }
+//    if ('serviceWorker' in navigator) {
+//        navigator.serviceWorker.register('/sw.js').then(function(registration) {
+//          console.log('ServiceWorker registration successful with scope: ',    registration.scope);
+//        }).catch(function(err) {
+//          console.log('ServiceWorker registration failed: ', err);
+//        });
+//     }
      var __INITIAL_STATE__ = ${JSON.stringify(state)}
   </script>
 </head>
