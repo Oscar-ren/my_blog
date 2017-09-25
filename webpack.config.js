@@ -102,7 +102,9 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx"],
     alias: {
-      fecha: "fecha/fecha.min.js"
+      fecha: "fecha/fecha.min.js",
+      'react': 'inferno-compat',
+      'react-dom': 'inferno-compat'
     }
   },
   devServer: {

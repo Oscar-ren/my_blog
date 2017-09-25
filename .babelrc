@@ -4,6 +4,13 @@
   ],
   "plugins": [
     ["inferno", { "imports": true }],
-    "transform-object-rest-spread"
+    "transform-object-rest-spread",
+    ["module-resolver", {
+      "root": ["."],
+      "alias": {
+        "react": "inferno-compat",
+        "react-dom": "inferno-compat"
+      }
+    }]
   ]
 }
