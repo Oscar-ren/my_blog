@@ -30,7 +30,7 @@ export default class Draw extends Component {
         }
       })
       .catch(err => {
-        console.log(err);
+        alert(`网络错误，请稍后再试`);
       });
   }
 
@@ -50,7 +50,7 @@ export default class Draw extends Component {
         }
       })
       .catch(err => {
-        console.log('err', err);
+        alert(`网络错误，请稍后再试`);
       });
   }
 

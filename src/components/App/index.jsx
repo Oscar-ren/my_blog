@@ -17,7 +17,6 @@ export default class App extends Component {
   }
 
   render () {
-    console.log('render app', this.props);
     const {children, params, commonTop, ...initialState} = this.props;
 
     const Main = children ? Inferno.cloneVNode(children, {
@@ -25,8 +24,6 @@ export default class App extends Component {
       ...this.state,
       update: this.update
     }) : null;
-
-    console.log(Main);
 
     return commonTop ? (
       <div>

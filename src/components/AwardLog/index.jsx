@@ -2,6 +2,7 @@
 
 import Component from 'inferno-component';
 import styles from '../Draw/draw.css';
+import fecha from 'fecha';
 
 export default class AwardLog extends Component {
   constructor (props) {
@@ -54,7 +55,7 @@ export default class AwardLog extends Component {
 
     return (
       <div>
-        <div className={styles.operator}>
+        <div className={styles.logOperator}>
           {this.state.award.map(item => {
             return (
               <span>{`奖品：${item.name} 剩余数：${item.remain} `}<br /></span>
@@ -67,7 +68,7 @@ export default class AwardLog extends Component {
           <ol className={styles.activityInfo}>
             {this.state.log.map((item) => {
               return (
-                <li>{`时间：${item.timestamp}， 领取了奖品${item.award.name}`}</li>
+                <li>{`时间：${fecha.format(new Date(item.timestamp), 'YYYY-MM-DD hh:mm:ss')}， 领取了奖品${item.award.name}`}</li>
               )
             })}
           </ol>
