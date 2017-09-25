@@ -15,15 +15,15 @@ let gift_BTSM_Num = 200;
 let award = [
   {
     id: 0,
-    // name: '活力水星开瓶器',
-    // pic: 'KangJia.jpeg',
-    remain: 2
+    name: '活力水星开瓶器',
+    pic: 'KangJia.jpeg',
+    remain: gift_KangJia_Num
   },
   {
     id: 1,
-    // name: '阿波罗五件套刀具',
-    // pic: 'BTSM.jpeg',
-    remain: 2
+    name: '阿波罗五件套刀具',
+    pic: 'BTSM.jpeg',
+    remain: gift_BTSM_Num
   }];
 
 let awardLog = [];

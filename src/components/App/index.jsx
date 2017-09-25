@@ -58,7 +58,8 @@ export default class App extends Component {
       <div className={styles.main_column}>
         <div className={styles.content}>{Main}</div>
         <footer>
-          <p>© 2017 - wanke</p>
+          <p>© 2017 - vanke</p>
+          <img className={styles.logo} src="../pics/vanke.jpg" alt=""/>
         </footer>
       </div>
     );
