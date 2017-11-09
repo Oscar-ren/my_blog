@@ -115,6 +115,7 @@ module.exports = {
       }
     },
     compress: true,
+    open: true,
     stats: 'minimal',
     watchContentBase: true,
     port: 9000

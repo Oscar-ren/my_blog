@@ -65,24 +65,6 @@ export const generateTagPage = (tags) => {
   fs.writeFileSync(publicPath('tags'), htmlString);
 }
 
-export const generateDrawPage = (params) => {
-  const htmlString = staticRender({
-    title: '深圳万科客户关系中心',
-    state: {...defaultState, ...params},
-    url: '/vanke/draw'
-  });
-  fs.writeFileSync(publicPath('draw'), htmlString);
-}
-
-export const generateDrawLogPage = (params) => {
-  const htmlString = staticRender({
-    title: '深圳万科客户关系中心',
-    state: {...defaultState, ...params},
-    url: '/vanke/awardLog'
-  });
-  fs.writeFileSync(publicPath('awardLog'), htmlString);
-}
-
 export const generateArchivesPage = (archives) => {
   const htmlString = staticRender({
     title: '归档 | 任祥磊的博客',
