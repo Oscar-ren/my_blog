@@ -17,7 +17,7 @@ export default class App extends Component {
   }
 
   render () {
-    const {children, params, commonTop, ...initialState} = this.props;
+    const {children, params, ...initialState} = this.props;
 
     const Main = children ? Inferno.cloneVNode(children, {
       ...initialState,
@@ -25,7 +25,7 @@ export default class App extends Component {
       update: this.update
     }) : null;
 
-    return commonTop ? (
+    return (
       <div>
         <div className={styles.left_column}>
           <header id="header">
@@ -50,14 +50,6 @@ export default class App extends Component {
             <p>© 2017 - <a href="https://github.com/Oscar-ren" target="_block">Oscar-ren</a> 的博客</p>
           </footer>
         </div>
-      </div>
-    ) : (
-      <div className={styles.main_column}>
-        <div className={styles.content}>{Main}</div>
-        <footer>
-          <p>© 2017 - vanke</p>
-          <img className={styles.logo} src="../pics/vanke.jpg" alt=""/>
-        </footer>
       </div>
     );
   }

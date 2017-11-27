@@ -92,6 +92,7 @@ module.exports = {
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
     }),
     new ExtractTextPlugin('style.css'),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new webpack.DllReferencePlugin({
       context: __dirname,
@@ -116,6 +117,8 @@ module.exports = {
     },
     compress: true,
     open: true,
+    hot: true,
+    inline: true,
     stats: 'minimal',
     watchContentBase: true,
     port: 9000
