@@ -1,1 +1,1 @@
-web: node mobile.js
+web: npm start
