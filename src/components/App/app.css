@@ -1,6 +1,6 @@
 .left_column {
   position: fixed;
-  color: var(--mainColor);
+  color: white;
   width: 250px;
   height: 100%;
   background: #5d87b1;
@@ -60,7 +60,7 @@
     margin: 10px 0;
 
     & a {
-      color: var(--mainColor);
+      color: white;
       cursor: pointer;
       transition: color 0.3s;
 

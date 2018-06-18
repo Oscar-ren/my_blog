@@ -9,7 +9,7 @@ const template = ({title, state, staticString}) => (
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>${title}</title>
   <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,700,700i" rel="stylesheet">
-  <link href="/statics/style.css" rel="stylesheet">
+  <link href="/statics/app.css" rel="stylesheet">
   <!--[if lt IE 10]>
   <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <![endif]-->
@@ -43,7 +43,8 @@ const template = ({title, state, staticString}) => (
 </head>
 <body>
   <div id="root">${staticString}</div>
-  <script src="/statics/vendor.dll.js"></script>
+  <script src="/statics/manifest.js"></script>
+  <script src="/statics/vendor.js"></script>
   <script src="/statics/app.js"></script>
   <script src="https://s19.cnzz.com/z_stat.php?id=1262801421&web_id=1262801421" language="JavaScript"></script>
 </body>

@@ -81,7 +81,7 @@ app.listen(process.env.PORT || 3000, (err) => {
   if (err) {
     throw err;
   } else {
-    console.log(`server listening on port ${process.env.PORT || 3000}`);
+    console.log(`start local server`);
   }
 });
 
