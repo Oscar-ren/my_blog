@@ -1,5 +1,5 @@
 # my_blog
 个人博客
 
-## adress
+## address
 https://www.renxianglei.com
