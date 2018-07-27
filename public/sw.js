@@ -35,10 +35,10 @@ self.addEventListener('install', event => {
 
 
 self.addEventListener('fetch', event => {
-  console.log('catch fetch')
 
   // should only intercept GET requests
-  if (event.request.method !== 'GET' || event.request.url.includes('hot-update') || event.request.url.includes('sockjs-node')) {
+  if (event.request.method !== 'GET' || event.request.url.includes('hot-update') ||
+    event.request.url.includes('sockjs-node') || event.request.url.includes('chrome-extension')) {
     return event.respondWith(fetch(event.request));
   }
 
