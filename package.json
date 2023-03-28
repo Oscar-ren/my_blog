@@ -1,9 +1,6 @@
 {
-  "name": "app-example",
+  "name": "my-blog",
   "version": "0.0.0",
-  "engines": {
-    "node": "7.9.0"
-  },
   "private": true,
   "scripts": {
     "start": "webpack -p && node app.js",
