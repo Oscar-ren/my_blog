@@ -5,29 +5,29 @@ const logger = require('morgan');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
-const helper = require('./helper');
+const helper = require('../helper');
 
-const app = express();
+const index = express();
 
 // view engine setup
-app.set('views', path.join(__dirname, 'public'));
-app.engine('html', require('ejs').renderFile);
-app.set('view engine', 'html');
+index.set('views', path.join(__dirname, 'public'));
+index.engine('html', require('ejs').renderFile);
+index.set('view engine', 'html');
 
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended: false}));
-app.use(compression());
-app.use(cookieParser());
-app.use(express.static(path.resolve('public'), {extensions: ['html']}));
-app.use('/statics', express.static(path.join(__dirname, 'dist')));
+index.use(logger('dev'));
+index.use(bodyParser.json());
+index.use(bodyParser.urlencoded({extended: false}));
+index.use(compression());
+index.use(cookieParser());
+index.use(express.static(path.resolve('public'), {extensions: ['html']}));
+index.use('/statics', express.static(path.join(__dirname, 'dist')));
 
-app.get('/blog/:name', (req, res, next) => {
+index.get('/blog/:name', (req, res, next) => {
   res.sendFile(`${req.params.name}.html`, {root: path.resolve('public')});
 });
 
-app.get('/json/posts', (req, res, next) => {
+index.get('/json/posts', (req, res, next) => {
   const {page, tag} = req.query;
   res.set('Access-Control-Allow-Origin', '*');
   res.status(200).send({
@@ -35,20 +35,20 @@ app.get('/json/posts', (req, res, next) => {
   });
 });
 
-app.get('/json/post', (req, res, next) => {
+index.get('/json/post', (req, res, next) => {
   const post = helper.getPost(req.query.name);
   res.status(200).send({
     post: post
   });
 });
 
-app.get('/json/tags', (req, res, next) => {
+index.get('/json/tags', (req, res, next) => {
   res.status(200).send({
     tags: Object.entries(helper.getTagsData()).sort()
   });
 });
 
-app.get('/json/archives', (req, res, next) => {
+index.get('/json/archives', (req, res, next) => {
   res.status(200).send({
     archives: Object.entries(helper.getPostListFromDate())
   });
@@ -77,7 +77,7 @@ app.get('/json/archives', (req, res, next) => {
 // });
 
 
-app.listen(process.env.PORT || 3000, (err) => {
+index.listen(process.env.PORT || 3000, (err) => {
   if (err) {
     throw err;
   } else {
@@ -85,4 +85,4 @@ app.listen(process.env.PORT || 3000, (err) => {
   }
 });
 
-module.exports = app;
+module.exports = index;

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node app.js",
+    "start": "node api/index.js",
     "dev": "concurrently \"cross-env NODE_ENV=dev && webpack-dev-server\" \"node app.js\"",
     "build": "babel-node build/generatorStatic.js && webpack -p",
     "lint": "eslint src/**/*.{js,jsx}"
