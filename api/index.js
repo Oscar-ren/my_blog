@@ -14,7 +14,6 @@ index.set('views', path.join(__dirname, 'public'));
 index.engine('html', require('ejs').renderFile);
 index.set('view engine', 'html');
 
-//app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 index.use(logger('dev'));
 index.use(bodyParser.json());
 index.use(bodyParser.urlencoded({extended: false}));
