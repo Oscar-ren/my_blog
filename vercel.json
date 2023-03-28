@@ -1,6 +1,6 @@
 {
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/apu" },
+    { "source": "/api/(.*)", "destination": "/api" },
     { "source": "/static/(.*)", "destination": "/dist" },
     { "source": "/blog/(.*)", "destination": "/api" },
     { "source": "/json/(.*)", "destination": "/api" }
