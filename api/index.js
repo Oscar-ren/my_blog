@@ -21,7 +21,7 @@ index.use(bodyParser.urlencoded({extended: false}));
 index.use(compression());
 index.use(cookieParser());
 index.use(express.static(path.resolve('public'), {extensions: ['html']}));
-index.use('/statics', express.static(path.join(__dirname, 'dist')));
+index.use('/statics', express.static(path.join(__dirname, '../public')));
 
 index.get('/blog/:name', (req, res, next) => {
   res.sendFile(`${req.params.name}.html`, {root: path.resolve('public')});

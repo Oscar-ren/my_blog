@@ -17,7 +17,7 @@ module.exports = {
     app: './src/index.jsx'
   },
   output: {
-    path: path.resolve('dist'),
+    path: path.resolve('public'),
     publicPath: '/statics',
     filename: '[name].js'
   },
